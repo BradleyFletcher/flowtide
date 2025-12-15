@@ -10,17 +10,17 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-brand-mint: #b0f2bf;
+  --color-brand-teal: #77d4c1;
+  --color-brand-blue: #4194b0;
+  --color-brand-navy: #1e4f9e;
+  --color-brand-deep: #040d59;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Lexend", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
 }
