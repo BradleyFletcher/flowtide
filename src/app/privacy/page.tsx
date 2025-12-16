@@ -5,13 +5,32 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "Privacy Policy for Flowtide. Learn how we collect, use, and protect your personal information.",
+    "Privacy Policy for Flowtide. Learn how we collect, use, and protect your personal information when using our web development services.",
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     title: "Privacy Policy | Flowtide",
     description:
       "Privacy Policy for Flowtide. Learn how we collect, use, and protect your personal information.",
     url: "https://flowtide.com/privacy",
     type: "website",
+    images: [
+      {
+        url: "/social-share.webp",
+        width: 1200,
+        height: 630,
+        alt: "Privacy Policy - Flowtide",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Privacy Policy | Flowtide",
+    description:
+      "Privacy Policy for Flowtide. Learn how we collect, use, and protect your personal information.",
+    images: ["/social-share.webp"],
   },
 };
 

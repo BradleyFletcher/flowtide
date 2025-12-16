@@ -39,7 +39,7 @@ export const HeroSection = () => {
   };
 
   return (
-    <section className="relative flex min-h-[calc(100vh-8rem)] w-full flex-col items-center justify-center text-center">
+    <section className="relative flex min-h-[calc(100vh-12rem)] w-full flex-col items-center justify-center text-center">
       {/* Wave Pattern Background */}
       <div
         className="absolute inset-0 opacity-5 pointer-events-none"

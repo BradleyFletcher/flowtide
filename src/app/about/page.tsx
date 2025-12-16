@@ -9,18 +9,73 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "Learn about Brad Fletcher, a solo web developer with 15+ years of experience building high-quality digital solutions using AI-powered development and modern frameworks.",
+  keywords: [
+    "Brad Fletcher",
+    "web developer",
+    "freelance developer",
+    "AI-powered development",
+    "React developer",
+    "Next.js expert",
+    "WordPress specialist",
+    "15 years experience",
+  ],
   openGraph: {
-    title: "About | Flowtide",
+    title: "About Brad Fletcher | Flowtide",
     description:
       "Learn about Brad Fletcher, a solo web developer with 15+ years of experience building high-quality digital solutions.",
     url: "https://flowtide.com/about",
-    type: "website",
+    type: "profile",
+    images: [
+      {
+        url: "/social-share.webp",
+        width: 1200,
+        height: 630,
+        alt: "About Flowtide - Brad Fletcher",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Brad Fletcher | Flowtide",
+    description:
+      "Learn about Brad Fletcher, a solo web developer with 15+ years of experience building high-quality digital solutions.",
+    images: ["/social-share.webp"],
   },
 };
 
 export default function AboutPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Brad Fletcher",
+    jobTitle: "Web Developer",
+    description:
+      "Solo web developer with 15+ years of experience building high-quality digital solutions.",
+    url: "https://flowtide.com/about",
+    email: "brad@flowtide.ai",
+    telephone: "+1234567890",
+    worksFor: {
+      "@type": "Organization",
+      name: "Flowtide",
+    },
+    knowsAbout: [
+      "Web Development",
+      "WordPress",
+      "Next.js",
+      "React",
+      "TypeScript",
+      "AI Integration",
+      "Mobile App Development",
+      "Cloud Hosting",
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Header />
 
       <main className="pt-20">

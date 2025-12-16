@@ -99,32 +99,9 @@ export const Footer = () => {
             <p className="text-white/80">
               © {currentYear} Flowtide. All rights reserved.
             </p>
-            <div className="flex gap-6">
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/80 transition-colors hover:text-white"
-              >
-                Twitter
-              </a>
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/80 transition-colors hover:text-white"
-              >
-                LinkedIn
-              </a>
-              <a
-                href="https://github.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/80 transition-colors hover:text-white"
-              >
-                GitHub
-              </a>
-            </div>
+            <p className="text-white/80">
+              Amesbury, Salisbury, Wiltshire, United Kingdom SP47TX
+            </p>
           </div>
         </div>
       </div>

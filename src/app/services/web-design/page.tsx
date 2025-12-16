@@ -3,10 +3,66 @@ import { Footer } from "@/components/footer";
 import { ServicePageHeader } from "../service-page-header";
 import { OtherServices } from "../other-services";
 import { ServiceCTA } from "../service-cta";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Web Design Services",
+  description:
+    "Beautiful, user-focused web designs that convert visitors into customers. Modern, responsive interfaces built with your brand and users in mind.",
+  keywords: [
+    "web design",
+    "UI/UX design",
+    "responsive design",
+    "user interface design",
+    "brand identity",
+    "conversion optimization",
+    "modern web design",
+  ],
+  openGraph: {
+    title: "Web Design Services | Flowtide",
+    description:
+      "Beautiful, user-focused web designs that convert visitors into customers. Modern, responsive interfaces built with your brand and users in mind.",
+    url: "https://flowtide.com/services/web-design",
+    type: "website",
+    images: [
+      {
+        url: "/social-share.webp",
+        width: 1200,
+        height: 630,
+        alt: "Web Design Services - Flowtide",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Web Design Services | Flowtide",
+    description:
+      "Beautiful, user-focused web designs that convert visitors into customers.",
+    images: ["/social-share.webp"],
+  },
+};
 
 export default function WebDesignPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Web Design Services",
+    description:
+      "Beautiful, user-focused web designs that convert visitors into customers. Modern, responsive interfaces built with your brand and users in mind.",
+    provider: {
+      "@type": "Organization",
+      name: "Flowtide",
+      url: "https://flowtide.com",
+    },
+    areaServed: "Worldwide",
+    serviceType: "Web Design",
+  };
   return (
     <div className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Header />
 
       <main className="pt-20">

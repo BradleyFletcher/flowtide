@@ -3,10 +3,66 @@ import { Footer } from "@/components/footer";
 import { ServicePageHeader } from "../service-page-header";
 import { OtherServices } from "../other-services";
 import { ServiceCTA } from "../service-cta";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Cloud Hosting Solutions",
+  description:
+    "Reliable cloud infrastructure on AWS, Azure, and Google Cloud. Scalable solutions with dedicated server options, auto-scaling, and 24/7 monitoring.",
+  keywords: [
+    "cloud hosting",
+    "AWS hosting",
+    "Azure hosting",
+    "Google Cloud",
+    "dedicated servers",
+    "managed hosting",
+    "scalable infrastructure",
+  ],
+  openGraph: {
+    title: "Cloud Hosting Solutions | Flowtide",
+    description:
+      "Reliable cloud infrastructure on AWS, Azure, and Google Cloud. Scalable solutions with dedicated server options.",
+    url: "https://flowtide.com/services/hosting",
+    type: "website",
+    images: [
+      {
+        url: "/social-share.webp",
+        width: 1200,
+        height: 630,
+        alt: "Cloud Hosting Solutions - Flowtide",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cloud Hosting Solutions | Flowtide",
+    description:
+      "Reliable cloud infrastructure on AWS, Azure, and Google Cloud. Scalable solutions.",
+    images: ["/social-share.webp"],
+  },
+};
 
 export default function HostingPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Cloud Hosting Solutions",
+    description:
+      "Reliable cloud infrastructure on AWS, Azure, and Google Cloud. Scalable solutions with dedicated server options, auto-scaling, and 24/7 monitoring.",
+    provider: {
+      "@type": "Organization",
+      name: "Flowtide",
+      url: "https://flowtide.com",
+    },
+    areaServed: "Worldwide",
+    serviceType: "Cloud Hosting",
+  };
   return (
     <div className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Header />
 
       <main className="pt-20">

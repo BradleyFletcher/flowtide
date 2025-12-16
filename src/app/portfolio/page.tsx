@@ -9,12 +9,35 @@ export const metadata: Metadata = {
   title: "Portfolio",
   description:
     "View my portfolio of web development projects including WordPress websites, Next.js applications, and custom web solutions for businesses worldwide.",
+  keywords: [
+    "web development portfolio",
+    "WordPress projects",
+    "Next.js projects",
+    "web design examples",
+    "developer portfolio",
+    "case studies",
+  ],
   openGraph: {
-    title: "Portfolio | Flowtide",
+    title: "Portfolio - Web Development Projects | Flowtide",
     description:
       "View my portfolio of web development projects including WordPress websites, Next.js applications, and custom web solutions.",
     url: "https://flowtide.com/portfolio",
     type: "website",
+    images: [
+      {
+        url: "/social-share.webp",
+        width: 1200,
+        height: 630,
+        alt: "Flowtide Portfolio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Portfolio - Web Development Projects | Flowtide",
+    description:
+      "View my portfolio of web development projects including WordPress websites, Next.js applications, and custom web solutions.",
+    images: ["/social-share.webp"],
   },
 };
 
@@ -32,8 +55,36 @@ const projects = [
 ];
 
 export default function PortfolioPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Portfolio",
+    description:
+      "View my portfolio of web development projects including WordPress websites, Next.js applications, and custom web solutions.",
+    url: "https://flowtide.com/portfolio",
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: projects.map((project, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "CreativeWork",
+          name: project.title,
+          description: project.description,
+          url: project.url,
+          image: `https://flowtide.com${project.image}`,
+          genre: project.category,
+        },
+      })),
+    },
+  };
+
   return (
     <div className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Header />
 
       <main className="pt-20">

@@ -3,10 +3,66 @@ import { Footer } from "@/components/footer";
 import { ServicePageHeader } from "../service-page-header";
 import { OtherServices } from "../other-services";
 import { ServiceCTA } from "../service-cta";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Next.js Development Services",
+  description:
+    "The React framework powering the modern web. Blazing-fast performance, SEO-friendly, and built to scale. Full-stack Next.js applications with server-side rendering.",
+  keywords: [
+    "Next.js development",
+    "React framework",
+    "server-side rendering",
+    "static site generation",
+    "full-stack development",
+    "Next.js applications",
+    "React development",
+  ],
+  openGraph: {
+    title: "Next.js Development Services | Flowtide",
+    description:
+      "The React framework powering the modern web. Blazing-fast performance, SEO-friendly, and built to scale.",
+    url: "https://flowtide.com/services/next.js",
+    type: "website",
+    images: [
+      {
+        url: "/social-share.webp",
+        width: 1200,
+        height: 630,
+        alt: "Next.js Development - Flowtide",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Next.js Development Services | Flowtide",
+    description:
+      "The React framework powering the modern web. Blazing-fast performance and SEO-friendly.",
+    images: ["/social-share.webp"],
+  },
+};
 
 export default function NextJSPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Next.js Development Services",
+    description:
+      "The React framework powering the modern web. Blazing-fast performance, SEO-friendly, and built to scale. Full-stack Next.js applications with server-side rendering.",
+    provider: {
+      "@type": "Organization",
+      name: "Flowtide",
+      url: "https://flowtide.com",
+    },
+    areaServed: "Worldwide",
+    serviceType: "Next.js Development",
+  };
   return (
     <div className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Header />
 
       <main className="pt-20">

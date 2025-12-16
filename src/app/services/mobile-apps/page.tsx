@@ -3,10 +3,66 @@ import { Footer } from "@/components/footer";
 import { ServicePageHeader } from "../service-page-header";
 import { OtherServices } from "../other-services";
 import { ServiceCTA } from "../service-cta";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Mobile App Development Services",
+  description:
+    "Native iOS and Android apps with React Native and Flutter. Cross-platform or fully native solutions with App Store deployment included.",
+  keywords: [
+    "mobile app development",
+    "iOS app development",
+    "Android app development",
+    "React Native",
+    "Flutter development",
+    "cross-platform apps",
+    "native apps",
+  ],
+  openGraph: {
+    title: "Mobile App Development Services | Flowtide",
+    description:
+      "Native iOS and Android apps with React Native and Flutter. Cross-platform or fully native solutions.",
+    url: "https://flowtide.com/services/mobile-apps",
+    type: "website",
+    images: [
+      {
+        url: "/social-share.webp",
+        width: 1200,
+        height: 630,
+        alt: "Mobile App Development - Flowtide",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Mobile App Development Services | Flowtide",
+    description:
+      "Native iOS and Android apps with React Native and Flutter. Cross-platform solutions.",
+    images: ["/social-share.webp"],
+  },
+};
 
 export default function MobileAppsPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Mobile App Development Services",
+    description:
+      "Native iOS and Android apps with React Native and Flutter. Cross-platform or fully native solutions with App Store deployment included.",
+    provider: {
+      "@type": "Organization",
+      name: "Flowtide",
+      url: "https://flowtide.com",
+    },
+    areaServed: "Worldwide",
+    serviceType: "Mobile App Development",
+  };
   return (
     <div className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Header />
 
       <main className="pt-20">

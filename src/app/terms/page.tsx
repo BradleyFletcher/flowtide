@@ -5,13 +5,32 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Terms of Service",
   description:
-    "Terms of Service for Flowtide. Read our terms and conditions for using our web development services.",
+    "Terms of Service for Flowtide. Read our terms and conditions for using our web development services, payment terms, and client responsibilities.",
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     title: "Terms of Service | Flowtide",
     description:
       "Terms of Service for Flowtide. Read our terms and conditions for using our web development services.",
     url: "https://flowtide.com/terms",
     type: "website",
+    images: [
+      {
+        url: "/social-share.webp",
+        width: 1200,
+        height: 630,
+        alt: "Terms of Service - Flowtide",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Terms of Service | Flowtide",
+    description:
+      "Terms of Service for Flowtide. Read our terms and conditions for using our web development services.",
+    images: ["/social-share.webp"],
   },
 };
 

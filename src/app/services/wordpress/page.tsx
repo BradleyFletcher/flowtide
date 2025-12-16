@@ -3,10 +3,66 @@ import { Footer } from "@/components/footer";
 import { ServicePageHeader } from "../service-page-header";
 import { OtherServices } from "../other-services";
 import { ServiceCTA } from "../service-cta";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "WordPress Development Services",
+  description:
+    "Custom WordPress solutions built for your needs. No templates, no bloat—just clean development, custom plugins, and high-performance WordPress sites.",
+  keywords: [
+    "WordPress development",
+    "custom WordPress",
+    "WordPress theme development",
+    "WordPress plugin development",
+    "WooCommerce",
+    "WordPress optimization",
+    "custom CMS",
+  ],
+  openGraph: {
+    title: "WordPress Development Services | Flowtide",
+    description:
+      "Custom WordPress solutions built for your needs. No templates, no bloat—just clean development and custom plugins.",
+    url: "https://flowtide.com/services/wordpress",
+    type: "website",
+    images: [
+      {
+        url: "/social-share.webp",
+        width: 1200,
+        height: 630,
+        alt: "WordPress Development - Flowtide",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "WordPress Development Services | Flowtide",
+    description:
+      "Custom WordPress solutions built for your needs. No templates, no bloat—just clean development.",
+    images: ["/social-share.webp"],
+  },
+};
 
 export default function WordPressPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "WordPress Development Services",
+    description:
+      "Custom WordPress solutions built for your needs. No templates, no bloat—just clean development, custom plugins, and high-performance WordPress sites.",
+    provider: {
+      "@type": "Organization",
+      name: "Flowtide",
+      url: "https://flowtide.com",
+    },
+    areaServed: "Worldwide",
+    serviceType: "WordPress Development",
+  };
   return (
     <div className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Header />
 
       <main className="pt-20">

@@ -3,10 +3,66 @@ import { Footer } from "@/components/footer";
 import { ServicePageHeader } from "../service-page-header";
 import { OtherServices } from "../other-services";
 import { ServiceCTA } from "../service-cta";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "AI Integration Services",
+  description:
+    "Intelligent automation with OpenAI, Claude, and Gemini. AI chatbots, workflow automation, and custom AI solutions that enhance user experience.",
+  keywords: [
+    "AI integration",
+    "OpenAI integration",
+    "ChatGPT integration",
+    "AI chatbots",
+    "workflow automation",
+    "Claude AI",
+    "artificial intelligence",
+  ],
+  openGraph: {
+    title: "AI Integration Services | Flowtide",
+    description:
+      "Intelligent automation with OpenAI, Claude, and Gemini. AI chatbots and workflow automation that enhance user experience.",
+    url: "https://flowtide.com/services/ai-integration",
+    type: "website",
+    images: [
+      {
+        url: "/social-share.webp",
+        width: 1200,
+        height: 630,
+        alt: "AI Integration Services - Flowtide",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AI Integration Services | Flowtide",
+    description:
+      "Intelligent automation with OpenAI, Claude, and Gemini. AI chatbots and workflow automation.",
+    images: ["/social-share.webp"],
+  },
+};
 
 export default function AIIntegrationPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "AI Integration Services",
+    description:
+      "Intelligent automation with OpenAI, Claude, and Gemini. AI chatbots, workflow automation, and custom AI solutions that enhance user experience.",
+    provider: {
+      "@type": "Organization",
+      name: "Flowtide",
+      url: "https://flowtide.com",
+    },
+    areaServed: "Worldwide",
+    serviceType: "AI Integration",
+  };
   return (
     <div className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Header />
 
       <main className="pt-20">

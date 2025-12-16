@@ -8,18 +8,64 @@ export const metadata: Metadata = {
   title: "Contact",
   description:
     "Get in touch to discuss your web development project. I typically respond within 24 hours. Available for WordPress, Next.js, and custom web solutions.",
+  keywords: [
+    "contact web developer",
+    "hire web developer",
+    "web development quote",
+    "project inquiry",
+    "freelance developer contact",
+  ],
   openGraph: {
-    title: "Contact | Flowtide",
+    title: "Contact Flowtide | Get a Free Quote",
     description:
       "Get in touch to discuss your web development project. I typically respond within 24 hours.",
     url: "https://flowtide.com/contact",
     type: "website",
+    images: [
+      {
+        url: "/social-share.webp",
+        width: 1200,
+        height: 630,
+        alt: "Contact Flowtide",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Flowtide | Get a Free Quote",
+    description:
+      "Get in touch to discuss your web development project. I typically respond within 24 hours.",
+    images: ["/social-share.webp"],
   },
 };
 
 export default function ContactPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    name: "Contact Flowtide",
+    description:
+      "Get in touch to discuss your web development project. I typically respond within 24 hours.",
+    url: "https://flowtide.com/contact",
+    mainEntity: {
+      "@type": "Organization",
+      name: "Flowtide",
+      email: "brad@flowtide.ai",
+      telephone: "+1234567890",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Remote",
+        addressCountry: "Worldwide",
+      },
+    },
+  };
+
   return (
     <div className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Header />
 
       <main className="pt-20">
@@ -93,10 +139,10 @@ export default function ContactPage() {
                           Phone
                         </h3>
                         <a
-                          href="tel:+1234567890"
+                          href="tel:+447990592141"
                           className="text-zinc-600 transition-colors hover:text-brand-blue"
                         >
-                          +1 (234) 567-890
+                          07990 592141
                         </a>
                       </div>
                     </div>
@@ -110,7 +156,10 @@ export default function ContactPage() {
                           Location
                         </h3>
                         <p className="text-zinc-600">
-                          Remote - Available Worldwide
+                          Amesbury, Salisbury, Wiltshire, United Kingdom
+                        </p>
+                        <p className="mt-1 text-sm text-zinc-500">
+                          Remote worker - Available worldwide
                         </p>
                       </div>
                     </div>
