@@ -22,8 +22,8 @@ export async function submitContactForm(formData: FormData) {
   }
 
   try {
-    await resend.emails.send({
-      from: "Contact Form <onboarding@resend.dev>", // Use your verified domain
+    const { data, error } = await resend.emails.send({
+      from: "Brad Fletcher <brad@flowtide.ai>",
       to: "brad@flowtide.ai",
       replyTo: email,
       subject: `Contact Form: ${subject}`,
@@ -36,6 +36,14 @@ export async function submitContactForm(formData: FormData) {
         <p>${message.replace(/\n/g, "<br>")}</p>
       `,
     });
+
+    if (error) {
+      console.error("Resend API error:", error);
+      return {
+        success: false,
+        error: error.message || "Failed to send message. Please try again.",
+      };
+    }
 
     return { success: true };
   } catch (error) {
