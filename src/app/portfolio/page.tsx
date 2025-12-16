@@ -1,6 +1,7 @@
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import Image from "next/image";
+import Link from "next/link";
 import { BrandButton } from "@/components/ui/brand-button";
 import { ExternalLink } from "lucide-react";
 import { Metadata } from "next";
@@ -50,6 +51,7 @@ const projects = [
       "Professional WordPress website for a guttering services company with custom design and lead generation features.",
     image: "/portfolio/super-guttering-services.png",
     url: "https://superguttering.co.uk/",
+    slug: "super-guttering",
     tags: ["WordPress", "Custom Theme", "SEO", "Lead Generation"],
   },
 ];
@@ -141,8 +143,13 @@ export default function PortfolioPage() {
                       <p className="mb-4 text-zinc-600">
                         {project.description}
                       </p>
-                      {project.url && (
-                        <div className="mb-4">
+                      <div className="mb-4 flex gap-3">
+                        <Link href={`/portfolio/${project.slug}`}>
+                          <BrandButton variant="primary" size="sm">
+                            View Case Study
+                          </BrandButton>
+                        </Link>
+                        {project.url && (
                           <a
                             href={project.url}
                             target="_blank"
@@ -154,11 +161,11 @@ export default function PortfolioPage() {
                               icon={<ExternalLink />}
                               iconPosition="right"
                             >
-                              Visit Website
+                              Visit Site
                             </BrandButton>
                           </a>
-                        </div>
-                      )}
+                        )}
+                      </div>
                       <div className="flex flex-wrap gap-2">
                         {project.tags.map((tag) => (
                           <span

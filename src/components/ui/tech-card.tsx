@@ -145,7 +145,6 @@ export const TechCard = ({
                   size="md"
                   iconPosition="right"
                   icon={<Icon />}
-                  disableHover={true}
                 >
                   Learn More
                 </BrandButton>
@@ -157,7 +156,6 @@ export const TechCard = ({
                 iconPosition="right"
                 icon={<Icon />}
                 onClick={onLearnMore}
-                disableHover={true}
               >
                 Learn More
               </BrandButton>
