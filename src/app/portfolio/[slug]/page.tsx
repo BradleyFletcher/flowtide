@@ -76,7 +76,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: `${project.title} | Flowtide Portfolio`,
       description: project.description,
-      url: `https://flowtide.com/portfolio/${params.slug}`,
+      url: `https://flowtide.com/portfolio/${slug}`,
       type: "website",
       images: [
         {
