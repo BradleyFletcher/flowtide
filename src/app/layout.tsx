@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
 import { CookieConsent } from "@/components/cookie-consent";
+import { WhatsAppButton } from "@/components/whatsapp-button";
 
 const googleSans = {
   variable: "--font-google-sans",
@@ -92,6 +95,7 @@ export default function RootLayout({
       <body className="antialiased">
         {children}
         <CookieConsent />
+        <WhatsAppButton />
       </body>
     </html>
   );
