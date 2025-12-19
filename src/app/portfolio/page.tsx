@@ -54,6 +54,18 @@ const projects = [
     slug: "super-guttering",
     tags: ["WordPress", "Custom Theme", "SEO", "Lead Generation"],
   },
+  {
+    id: 2,
+    title: "Chai Chatbot",
+    category: "WordPress Plugin",
+    description:
+      "Free AI-powered WordPress chatbot plugin with OpenAI GPT-4 and Google Gemini integration for intelligent customer support.",
+    image: "/portfolio/chai.png",
+    url: "https://github.com/BradleyFletcher/chai",
+    slug: "chai",
+    caseStudyLink: "/chai",
+    tags: ["WordPress", "AI", "OpenAI", "Gemini", "Open Source"],
+  },
 ];
 
 export default function PortfolioPage() {
@@ -144,7 +156,12 @@ export default function PortfolioPage() {
                         {project.description}
                       </p>
                       <div className="mb-4 flex gap-3">
-                        <Link href={`/portfolio/${project.slug}`}>
+                        <Link
+                          href={
+                            project.caseStudyLink ||
+                            `/portfolio/${project.slug}`
+                          }
+                        >
                           <BrandButton variant="primary" size="sm">
                             View Case Study
                           </BrandButton>
