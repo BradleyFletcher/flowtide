@@ -53,7 +53,41 @@ const portfolioItems = {
       company: "Super Guttering Services",
     },
   },
-  // Add more portfolio items here
+  "civic-society": {
+    title: "Civic Society Demo",
+    category: "Next.js",
+    url: "https://civicsociety.flowtide.ai",
+    description:
+      "Modern web application demo for civic societies in the UK, showcasing membership management and community engagement features.",
+    tags: ["Next.js", "TypeScript", "Supabase", "TailwindCSS"],
+    details: [
+      { label: "Client", value: "Demo Project" },
+      { label: "Industry", value: "Community Organizations" },
+      { label: "Timeline", value: "2 weeks" },
+      { label: "Platform", value: "Next.js 15" },
+      { label: "Services", value: "Full-Stack Development" },
+      { label: "Year", value: "2025" },
+    ],
+    challenge:
+      "Civic societies in the UK need modern digital tools to manage memberships, organize events, and engage with their communities. Traditional solutions are often outdated, difficult to use, or lack the features needed for effective community management.",
+    solution:
+      "Built a modern, full-stack web application using Next.js 15 with TypeScript, Supabase for backend services, and TailwindCSS for a clean, responsive design. The demo showcases key features that civic societies need while maintaining simplicity and ease of use.",
+    features: [
+      "Modern, responsive UI built with Next.js 15 and TailwindCSS",
+      "TypeScript for type-safe development",
+      "Supabase integration for authentication and database",
+      "Membership management system",
+      "Event organization and calendar features",
+      "Community engagement tools",
+      "Mobile-first responsive design",
+      "Fast page loads with Next.js optimization",
+      "Secure authentication and authorization",
+      "Real-time data updates",
+      "Admin dashboard for society management",
+    ],
+    images: [],
+    testimonial: undefined,
+  },
 };
 
 type Props = {

@@ -66,6 +66,17 @@ const projects = [
     caseStudyLink: "/chai",
     tags: ["WordPress", "AI", "OpenAI", "Gemini", "Open Source"],
   },
+  {
+    id: 3,
+    title: "Civic Society Demo",
+    category: "Next.js",
+    description:
+      "Modern web application demo for civic societies in the UK, showcasing membership management and community engagement features.",
+    image: "/portfolio/robert-anderson-JVoFM69hZso-unsplash.webp",
+    url: "https://civicsociety.flowtide.ai",
+    slug: "civic-society",
+    tags: ["Next.js", "TypeScript", "Supabase", "TailwindCSS"],
+  },
 ];
 
 export default function PortfolioPage() {
